@@ -1,0 +1,15 @@
+package service
+
+import "bitbucket.org/btcid/startrack/internal/config"
+
+type (
+	ServiceContext struct {
+		Config *config.Config
+	}
+)
+
+func NewServiceContext(c *config.Config) *ServiceContext {
+	return &ServiceContext{
+		Config: c,
+	}
+}
