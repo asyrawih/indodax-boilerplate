@@ -21,15 +21,17 @@ func main() {
 	if err := conf.LoadConfig(*configFile, &config); err != nil {
 		log.Fatal(err)
 	}
-
 	// Spawn Server
 	srv := server.MustNewServer(&config)
-	defer srv.Stop()
 
 	// Register Service In Here
 	ctx := service.NewServiceContext(&config)
 	handler.RegisterHandlers(srv, ctx)
 
-	srv.Start()
+	go srv.Start()
+
+	// Can Add Grpc Server In Here
+	// And Spawn int Another Goroutine
+	select {}
 
 }
