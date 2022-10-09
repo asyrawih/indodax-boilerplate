@@ -20,7 +20,7 @@ func RegisterHandlers(s *server.Server, ctx *service.ServiceContext) {
 			Name:    "test",
 			Method:  http.MethodGet,
 			Path:    "/test",
-			Handler: SampleHandler(ctx),
+			Handler: HelloWorld(ctx),
 		},
 	}
 

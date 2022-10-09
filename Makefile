@@ -1,4 +1,4 @@
 
 start:
-	go run ./cmd/main.go 
+	go run startrack.go 
 
