@@ -4,18 +4,22 @@ import (
 	"net/http"
 
 	"bitbucket.org/btcid/startrack/internal/service"
+	"bitbucket.org/btcid/startrack/pkg/response"
 )
 
 // SampleHandler function  
 func SampleHandler(svc *service.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		_, _ = w.Write([]byte(svc.Config.Name))
+		hello := map[string]string{"hello": "hello"}
+		response.ToJson(w, hello)
 	}
 }
 
 // HelloWorld function  
 func HelloWorld(svc *service.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		_, _ = w.Write([]byte(svc.Config.Name))
+		w.WriteHeader(http.StatusOK)
+		hello := map[string]string{"hello": "hello"}
+		response.ToJson(w, hello)
 	}
 }

@@ -1,3 +1,15 @@
+# Start Track
+
+- [x] Http Api
+- [x] Register Routes
+- [ ] Register Middleware
+- [ ] Implements Grpc API And Running Both
+
+
+### How To Start Http Server 
+
+```go 
+
 package main
 
 import (
@@ -42,3 +54,14 @@ func main() {
 	select {}
 
 }
+
+```
+
+```bash
+# Option
+  -f string
+        the config file (default "etc/startrack.yaml")
+  -p string
+        set for running port (default "3000")
+
+```

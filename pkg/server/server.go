@@ -50,6 +50,12 @@ func (s *Server) AddRoutes(routes Routes) {
 	}
 }
 
+// Route method  
+// Just in Case need access intance of router for modified on Route
+func (s *Server) Route() *mux.Router {
+	return router
+}
+
 // Start Http Server
 func (s *Server) Start() {
 	log.Printf("server:[%s] has Started on port %s", s.config.Name, s.config.Port)
